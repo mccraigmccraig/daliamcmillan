@@ -1,4 +1,4 @@
-name = 'dalia-mcmillan'
+name = 'daliamcmillan'
 main="worker/index.js"
 compatibility_date = "2026-05-05"
 compatibility_flags = [ "nodejs_compat" ]
