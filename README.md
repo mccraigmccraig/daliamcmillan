@@ -1,4 +1,4 @@
-# Your Hakuto Site
+# Your Hakuto Site!
 
 Scaffolded by [Hakuto](https://hakuto.dev/), a Claude Code plugin for building Astro sites with shadcn/ui and Cloudflare Workers.
 
