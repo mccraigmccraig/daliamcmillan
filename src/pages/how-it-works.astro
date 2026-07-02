@@ -1,0 +1,96 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const description =
+  "How Solution Focused Hypnotherapy works — neuroscience, psychotherapy, NLP and CBT combined. A typical session, and what to expect from your free initial consultation with Dalia McMillan in Brighton.";
+---
+
+<Layout title="How it works" description={description}>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
+    <div class="container py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">How it works</p>
+        <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          A forward-thinking, <em class="italic text-primary">practical</em> approach.
+        </h1>
+        <p class="mt-8 text-lg leading-relaxed text-foreground/85 sm:text-xl">
+          Solution Focused Hypnotherapy helps you focus on where you want to be, rather than what's been holding you back.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+          It combines the best of neuroscience, psychotherapy, NLP and CBT to create real, lasting change. I'll help you understand how your brain works, why you feel the way you do, and how you can begin to take back control.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 sm:py-28">
+    <div class="container grid gap-14 lg:grid-cols-2 lg:gap-16">
+      <article class="rounded-[1.75rem] border border-cream-200 bg-background p-10 shadow-soft">
+        <div class="flex items-center gap-3">
+          <span class="grid h-11 w-11 place-items-center rounded-full bg-sage-100 text-primary" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+          </span>
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">A typical session</p>
+        </div>
+        <h2 class="mt-6 font-display text-3xl leading-tight sm:text-[36px]">
+          Talking therapy, then a deeply relaxing trance.
+        </h2>
+        <p class="mt-6 text-[17px] leading-relaxed text-foreground/85">
+          Sessions begin with talking therapy, followed by a deeply relaxing trance state, where the conscious and subconscious mind can work together — making positive change feel natural and achievable.
+        </p>
+      </article>
+
+      <article class="rounded-[1.75rem] border border-terracotta-200 bg-terracotta-100/50 p-10 shadow-soft">
+        <div class="flex items-center gap-3">
+          <span class="grid h-11 w-11 place-items-center rounded-full bg-background text-terracotta-500" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4"/>
+              <path d="M12 18v4"/>
+              <path d="M4.93 4.93l2.83 2.83"/>
+              <path d="M16.24 16.24l2.83 2.83"/>
+              <path d="M2 12h4"/>
+              <path d="M18 12h4"/>
+              <path d="M4.93 19.07l2.83-2.83"/>
+              <path d="M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </span>
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Your free consultation</p>
+        </div>
+        <h2 class="mt-6 font-display text-3xl leading-tight sm:text-[36px]">
+          Understand the neuroscience — before you commit to anything.
+        </h2>
+        <p class="mt-6 text-[17px] leading-relaxed text-foreground/85">
+          Before you commit to anything, we start with a free initial consultation. This includes a simple explanation of the neuroscience behind the approach, so you understand exactly how and why it works, and can feel confident about the process from the very first step.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="pb-24 sm:pb-32">
+    <div class="container">
+      <div class="rounded-[2rem] bg-gradient-cta px-8 py-14 text-center shadow-medium sm:px-16">
+        <h2 class="font-display text-3xl leading-tight text-primary-foreground sm:text-4xl">
+          Ready to take that first step?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-primary-foreground/85">
+          The consultation is free, no obligation, and often the moment things start to feel a little lighter.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <a
+            href="https://calendly.com/daliamcdalia"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 text-base font-medium text-primary shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium"
+          >
+            Book your free consultation
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

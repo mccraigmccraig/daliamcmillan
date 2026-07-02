@@ -1,0 +1,98 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BookingButton from "@/components/BookingButton.astro";
+
+const description =
+  "Solution Focused Hypnotherapy in Brighton and online — for anxiety, stress, trauma, habits, addiction, confidence, performance, sleep, mood and pain. Adults and children over 8.";
+
+const groups = [
+  {
+    number: "01",
+    title: "Anxiety, Stress & Trauma",
+    items: ["Anxiety & stress", "Panic attacks", "Phobias", "PTSD", "OCD"],
+  },
+  {
+    number: "02",
+    title: "Habits & Addiction",
+    items: ["Addiction", "Smoking & vaping", "Weight management"],
+  },
+  {
+    number: "03",
+    title: "Confidence & Performance",
+    items: ["Confidence & motivation", "Performance", "Anger management"],
+  },
+  {
+    number: "04",
+    title: "Sleep, Mood & Pain",
+    items: ["Low mood", "Sleep issues", "Pain management"],
+  },
+];
+---
+
+<Layout title="What I can help with" description={description}>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
+    <div class="container py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">What I can help with</p>
+        <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          Real, lasting change — for what's<br class="hidden sm:block" /> <em class="italic text-primary">weighing on you.</em>
+        </h1>
+        <p class="mt-8 text-lg leading-relaxed text-foreground/85 sm:text-xl">
+          I work with adults and children over 8, both in person in Brighton and online.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-8">
+    <div class="container">
+      <ul class="grid gap-6 md:grid-cols-2">
+        {groups.map((group) => (
+          <li class="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-cream-200 bg-background p-10 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-medium">
+            <div class="flex items-baseline justify-between gap-4">
+              <p class="font-display text-sm tracking-[0.2em] text-terracotta-500">{group.number}</p>
+              <span class="h-px flex-1 bg-cream-300"></span>
+            </div>
+            <h2 class="mt-6 font-display text-3xl leading-tight text-foreground sm:text-[34px]">
+              {group.title}
+            </h2>
+            <ul class="mt-6 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li class="rounded-full border border-sage-200 bg-sage-50 px-4 py-1.5 text-sm text-foreground/80">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-24 sm:py-32">
+    <div class="container">
+      <div class="mx-auto max-w-3xl rounded-[2rem] border border-cream-200 bg-cream-50 p-10 text-center shadow-soft sm:p-14">
+        <h2 class="font-display text-3xl leading-tight sm:text-[36px]">
+          Not sure if I can help with what you're experiencing?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          Get in touch or book a free consultation and we can talk it through.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <BookingButton size="lg" label="Book a free consultation" />
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 text-[15px] font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            Get in touch
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-muted-foreground">
+          Or email
+          <a href="mailto:dalia@daliamcmillan.uk" class="text-primary underline underline-offset-4 hover:text-terracotta-500">dalia@daliamcmillan.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

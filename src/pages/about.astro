@@ -1,0 +1,87 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BookingButton from "@/components/BookingButton.astro";
+
+const description =
+  "About Dalia McMillan — hypnotherapist in Brighton with 28 years of therapeutic practice. Solution Focused Hypnotherapy in person and online, for adults and children over 8.";
+---
+
+<Layout title="About" description={description}>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
+    <div class="container grid gap-16 py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-20 lg:py-28">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">About</p>
+        <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          Hello, I'm <em class="italic text-primary">Dalia McMillan.</em>
+        </h1>
+
+        <div class="mt-10 space-y-6 text-lg leading-relaxed text-foreground/85">
+          <p>
+            I've been working in therapeutic and wellbeing practices for over 28 years, beginning as a qualified reflexologist and body worker. I hold Level 2 counselling training and am continuing to deepen my practice with further study at Level 3.
+          </p>
+          <p>
+            Alongside this, I'm an artist and teacher, and I bring that same creativity, empathy and understanding into the way I work with people.
+          </p>
+          <p>
+            I'm passionate about helping people move forward, feel calmer, and free themselves from patterns that no longer serve them. You can feel confident that I've been trained with CPHT, an award-winning school, am fully insured, and am a member of AfSFH (the Association for Solution Focused Hypnotherapy).
+          </p>
+          <p>
+            I see clients in person in Brighton, and online — whichever suits you best. I work with adults and children over 8.
+          </p>
+        </div>
+
+        <div class="mt-10">
+          <BookingButton size="lg" label="Book a free consultation" />
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&h=1125&fit=crop&auto=format&q=75"
+            alt="Dalia McMillan, hypnotherapist, seated in a calm therapy room with warm natural light"
+            width="900"
+            height="1125"
+            loading="eager"
+            class="h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" aria-hidden="true"></div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 hidden sm:block max-w-[240px] rounded-2xl border border-cream-200 bg-background p-5 shadow-medium">
+          <p class="text-xs uppercase tracking-[0.16em] text-terracotta-500">Credentials</p>
+          <ul class="mt-3 space-y-1.5 text-sm leading-snug text-foreground">
+            <li>Trained with CPHT</li>
+            <li>Member of AfSFH</li>
+            <li>Fully insured</li>
+            <li>28 years in practice</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 sm:py-28 bg-cream-50 border-t border-cream-200/70">
+    <div class="container grid gap-10 md:grid-cols-3">
+      {[
+        {
+          heading: "Where I work",
+          body: "In person in Brighton, and online — whichever suits you best.",
+        },
+        {
+          heading: "Who I work with",
+          body: "Adults and children over 8.",
+        },
+        {
+          heading: "How we begin",
+          body: "With a free initial consultation, so you can decide what feels right.",
+        },
+      ].map((item) => (
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">{item.heading}</p>
+          <p class="mt-3 font-display text-2xl leading-snug text-foreground">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

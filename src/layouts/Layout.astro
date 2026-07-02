@@ -1,0 +1,106 @@
+---
+import "../index.css";
+import { Font } from "astro:assets";
+import { Schema } from "astro-seo-schema";
+import type { Thing, WithContext } from "schema-dts";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+interface Props {
+	title?: string;
+	description?: string;
+	noindex?: boolean;
+	socialImageUrl?: string;
+	schema?: WithContext<Thing> | WithContext<Thing>[];
+}
+
+const SITE_NAME = "Dalia McMillan";
+const SITE_DESCRIPTION =
+	"Solution Focused Hypnotherapy with Dalia McMillan — practical, forward-thinking sessions to help you feel calmer and move forward. In person in Brighton, or online.";
+
+const ENABLE_WEBMCP = false;
+
+const { url } = Astro;
+const {
+	title: pageTitle,
+	description = SITE_DESCRIPTION,
+	noindex = false,
+	socialImageUrl,
+	schema,
+} = Astro.props;
+
+const title = pageTitle
+	? `${pageTitle} | ${SITE_NAME}`
+	: `${SITE_NAME} — Solution Focused Hypnotherapy in Brighton`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={url.href} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#faf7f2" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    {socialImageUrl && (
+      <meta property="og:image" content={socialImageUrl} />
+      <meta property="og:image:alt" content={title} />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
+    <Font cssVariable="--font-display" preload />
+    <Font cssVariable="--font-body" preload />
+    {schema && (Array.isArray(schema)
+      ? schema.map((s) => <Schema item={s} />)
+      : <Schema item={schema} />
+    )}
+  </head>
+
+  <body class="min-h-screen bg-background text-foreground flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:shadow-medium"
+    >
+      Skip to content
+    </a>
+    <Header />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+
+    {ENABLE_WEBMCP && (
+      <script is:inline>
+        (function() {
+          if (!navigator.modelContext) return;
+          navigator.modelContext.registerTool({
+            name: "search-site",
+            description: "Search this site for a given query.",
+            inputSchema: { type: "object", properties: { query: { type: "string" } }, required: ["query"] },
+            async execute({ query }) {
+              try {
+                const pagefind = await import("/pagefind/pagefind.js");
+                await pagefind.init();
+                const search = await pagefind.search(query);
+                const results = await Promise.all(search.results.slice(0, 5).map(r => r.data()));
+                return results.map(r => ({ title: r.meta?.title, url: r.url, excerpt: r.excerpt }));
+              } catch (e) {
+                return { results: [], message: "Search unavailable" };
+              }
+            }
+          });
+        })();
+      </script>
+    )}
+  </body>
+</html>

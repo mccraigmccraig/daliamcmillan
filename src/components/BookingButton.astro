@@ -1,0 +1,50 @@
+---
+interface Props {
+  label?: string;
+  variant?: "primary" | "outline" | "ghost";
+  size?: "md" | "lg";
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  label = "Book your free consultation",
+  variant = "primary",
+  size = "md",
+  class: extraClass = "",
+  ariaLabel,
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2";
+
+const variants = {
+  primary:
+    "bg-primary text-primary-foreground shadow-soft hover:bg-sage-700 hover:shadow-medium hover:-translate-y-0.5",
+  outline:
+    "border border-primary/40 text-primary bg-transparent hover:bg-primary hover:text-primary-foreground",
+  ghost:
+    "text-primary hover:bg-cream-100",
+};
+
+const sizes = {
+  md: "px-6 py-3 text-[15px]",
+  lg: "px-8 py-4 text-base",
+};
+
+const classes = `${base} ${variants[variant]} ${sizes[size]} ${extraClass}`;
+---
+
+<a
+  href="https://calendly.com/daliamcdalia"
+  target="_blank"
+  rel="noopener"
+  class={classes}
+  aria-label={ariaLabel ?? label}
+>
+  <span>{label}</span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M5 12h14"/>
+    <path d="m12 5 7 7-7 7"/>
+  </svg>
+</a>

@@ -1,0 +1,297 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BookingButton from "@/components/BookingButton.astro";
+import type { ProfessionalService, WithContext } from "schema-dts";
+
+const description =
+  "Solution Focused Hypnotherapy with Dalia McMillan in Brighton, UK — and online. A forward-thinking, practical approach to feeling calmer, moving forward, and freeing yourself from patterns that no longer serve you.";
+
+const schema: WithContext<ProfessionalService> = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Dalia McMillan",
+  alternateName: "Dalia McMillan Hypnotherapy",
+  description,
+  url: Astro.site?.href ?? Astro.url.origin,
+  image: `${Astro.site?.origin ?? Astro.url.origin}/favicon.svg`,
+  email: "dalia@daliamcmillan.uk",
+  areaServed: [
+    { "@type": "City", name: "Brighton" },
+    { "@type": "Country", name: "United Kingdom" },
+    "Online",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Brighton",
+    addressCountry: "GB",
+  },
+  provider: {
+    "@type": "Person",
+    name: "Dalia McMillan",
+    jobTitle: "Solution Focused Hypnotherapist",
+    worksFor: { "@type": "Organization", name: "Dalia McMillan" },
+  },
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: "https://calendly.com/daliamcdalia",
+    name: "Book a free initial consultation",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Solution Focused Hypnotherapy sessions",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Anxiety, stress & trauma" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Habits & addiction" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Confidence & performance" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sleep, mood & pain" } },
+    ],
+  },
+};
+
+const trustSignals = [
+  "Trained with CPHT",
+  "Member of AfSFH",
+  "Fully insured",
+  "28 years in therapeutic practice",
+];
+
+const helpCards = [
+  {
+    title: "Anxiety, Stress & Trauma",
+    body: "Anxiety & stress, panic attacks, phobias, PTSD, OCD.",
+  },
+  {
+    title: "Habits & Addiction",
+    body: "Addiction, smoking & vaping, weight management.",
+  },
+  {
+    title: "Confidence & Performance",
+    body: "Confidence & motivation, performance, anger management.",
+  },
+  {
+    title: "Sleep, Mood & Pain",
+    body: "Low mood, sleep issues, pain management.",
+  },
+];
+---
+
+<Layout
+  title="Solution Focused Hypnotherapy in Brighton"
+  description={description}
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-warm"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="absolute -top-32 -right-32 -z-10 h-[520px] w-[520px] rounded-full bg-terracotta-200/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="absolute -bottom-40 -left-32 -z-10 h-[500px] w-[500px] rounded-full bg-sage-200/50 blur-3xl"
+      aria-hidden="true"
+    ></div>
+
+    <div class="container grid gap-16 py-20 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:py-32">
+      <div class="max-w-2xl">
+        <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-cream-300 bg-background/70 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground animate-fade-up">
+          <span class="h-1.5 w-1.5 rounded-full bg-terracotta-400"></span>
+          Brighton · In person &amp; online
+        </p>
+        <h1
+          class="font-display text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-[68px] animate-fade-up"
+          style="animation-delay: 80ms;"
+        >
+          Be the master of<br />your own <em class="italic text-primary">mind.</em>
+        </h1>
+        <p
+          class="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl animate-fade-up"
+          style="animation-delay: 160ms;"
+        >
+          Solution Focused Hypnotherapy with Dalia McMillan — a forward-thinking, practical approach to feeling calmer, moving forward, and freeing yourself from patterns that no longer serve you. In person in Brighton, or online wherever you are.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style="animation-delay: 240ms;">
+          <BookingButton size="lg" label="Book your free consultation" />
+          <a
+            href="/how-it-works/"
+            class="inline-flex items-center gap-1.5 rounded-full px-5 py-3 text-[15px] font-medium text-foreground hover:text-primary transition-colors"
+          >
+            How it works
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative animate-fade-up" style="animation-delay: 320ms;">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <img
+            src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=900&h=1125&fit=crop&auto=format&q=75"
+            alt="Soft morning light over the Brighton coastline — a calm, open horizon"
+            width="900"
+            height="1125"
+            loading="eager"
+            class="h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 hidden sm:block max-w-[220px] rounded-2xl bg-background/95 p-4 shadow-medium backdrop-blur">
+          <p class="text-xs uppercase tracking-[0.16em] text-terracotta-500">Your first step</p>
+          <p class="mt-2 text-sm leading-snug text-foreground">
+            A free initial consultation — no obligation, just a conversation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust signals -->
+  <section aria-label="Credentials" class="border-y border-cream-200/80 bg-cream-50">
+    <div class="container py-6">
+      <ul class="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs uppercase tracking-[0.18em] text-muted-foreground sm:text-sm">
+        {trustSignals.map((label, i) => (
+          <li class="flex items-center gap-3">
+            {i > 0 && <span class="hidden sm:inline text-cream-300" aria-hidden="true">·</span>}
+            {i > 0 && <span class="sr-only">·</span>}
+            <span>{label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- What is SFH -->
+  <section class="py-24 sm:py-32">
+    <div class="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">What it is</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          What is Solution Focused Hypnotherapy?
+        </h2>
+        <div class="mt-10 hidden lg:block">
+          <div class="relative overflow-hidden rounded-[1.75rem] bg-cream-100 shadow-soft aspect-[4/5]">
+            <img
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=1000&fit=crop&auto=format&q=75"
+              alt="Soft morning light across a natural linen throw and folded blanket — a quiet, unhurried moment"
+              width="800"
+              height="1000"
+              loading="lazy"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-xl">
+        <p class="text-lg leading-relaxed text-foreground/85">
+          It combines the best of neuroscience, psychotherapy, NLP and CBT to create real, lasting change. Rather than dwelling on what's been holding you back, sessions focus on where you want to be — combining talking therapy with a deeply relaxing trance state, where the conscious and subconscious mind work together to make positive change feel natural and achievable.
+        </p>
+
+        <ul class="mt-10 space-y-6 border-l border-sage-200 pl-6">
+          <li>
+            <p class="font-display text-lg text-foreground">Grounded in neuroscience</p>
+            <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">
+              Understand how your brain works, why you feel the way you do, and how to take back control.
+            </p>
+          </li>
+          <li>
+            <p class="font-display text-lg text-foreground">Forward-looking, not dwelling</p>
+            <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">
+              We focus on where you want to be, not on rehearsing the past.
+            </p>
+          </li>
+          <li>
+            <p class="font-display text-lg text-foreground">Talking + trance</p>
+            <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">
+              A deeply relaxing state where conscious and subconscious work together, so change feels natural.
+            </p>
+          </li>
+        </ul>
+
+        <a
+          href="/how-it-works/"
+          class="mt-10 inline-flex items-center gap-2 border-b border-primary/60 pb-1 text-[15px] font-medium text-primary hover:border-primary"
+        >
+          Learn how it works
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Can Help With teaser -->
+  <section class="py-24 sm:py-28 bg-cream-50 border-y border-cream-200/70">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">What I can help with</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          A practical approach to real change.
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground">
+          I work with adults and children over 8, in person in Brighton and online.
+        </p>
+      </div>
+
+      <ul class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {helpCards.map((card) => (
+          <li>
+            <a
+              href="/what-i-can-help-with/"
+              class="group flex h-full flex-col rounded-2xl border border-cream-200 bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-medium"
+            >
+              <h3 class="font-display text-xl leading-snug text-foreground">
+                {card.title}
+              </h3>
+              <p class="mt-3 flex-1 text-[15px] leading-relaxed text-muted-foreground">
+                {card.body}
+              </p>
+              <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section class="py-24 sm:py-28">
+    <div class="container">
+      <div class="relative overflow-hidden rounded-[2rem] bg-gradient-cta px-8 py-16 shadow-medium sm:px-16">
+        <div class="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-terracotta-200/25 blur-3xl" aria-hidden="true"></div>
+        <div class="absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-cream-100/15 blur-3xl" aria-hidden="true"></div>
+
+        <div class="relative mx-auto max-w-3xl text-center">
+          <p class="text-xs uppercase tracking-[0.22em] text-cream-100/80">Free initial consultation</p>
+          <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight text-primary-foreground sm:text-[46px]">
+            Feel more in control, from the very first conversation.
+          </h2>
+          <p class="mt-6 text-lg leading-relaxed text-primary-foreground/85">
+            The free initial consultation includes a simple neuroscience explanation, so you can feel more in control and confident about the process.
+          </p>
+          <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="https://calendly.com/daliamcdalia"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 text-base font-medium text-primary shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium"
+            >
+              Book on Calendly
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a
+              href="/contact/"
+              class="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-8 py-4 text-base font-medium text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
