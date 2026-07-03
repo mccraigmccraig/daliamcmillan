@@ -1,6 +1,8 @@
 ---
+import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
+import daliaPhoto from "@/assets/dalia-photo.jpg";
 
 const description =
   "About Dalia McMillan — hypnotherapist in Brighton with 28 years of therapeutic practice. Solution Focused Hypnotherapy in person and online, for adults and children over 8.";
@@ -38,11 +40,11 @@ const description =
 
       <div class="relative">
         <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
-          <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&h=1125&fit=crop&auto=format&q=75"
-            alt="Dalia McMillan, hypnotherapist, seated in a calm therapy room with warm natural light"
-            width="900"
-            height="1125"
+          <Picture
+            src={daliaPhoto}
+            formats={['webp']}
+            widths={[800, 1200, 1920]}
+            alt="Dalia McMillan, Solution Focused Hypnotherapist, smiling"
             loading="eager"
             class="h-full w-full object-cover"
           />
