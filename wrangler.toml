@@ -16,6 +16,7 @@ not_found_handling = "404-page"
 html_handling = "force-trailing-slash"
 run_worker_first = ["/~*"]
 
-[[routes]]
-pattern = "daliamcmillan.uk"
-custom_domain = true
+# Routes are template placeholders. Uncomment and set your domain when ready.
+# [[routes]]
+# pattern = "example.com"
+# custom_domain = true
