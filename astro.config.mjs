@@ -27,7 +27,7 @@ export default defineConfig({
     pagefind(),
     ...(devToolbar.enabled ? [astroAgentAnnotate()] : []),
     favicons({
-      input: "./src/assets/favicon.png",
+      input: "./src/assets/favicon.svg",
       name: "Dalia McMillan",
       short_name: "Dalia McMillan",
     }),
