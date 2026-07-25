@@ -1,0 +1,58 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+  title?: string;
+}
+const {
+  size = 96,
+  class: className,
+  title = "Dalia McMillan — hypnotherapy for children and teens",
+} = Astro.props;
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 120 120"
+  role="img"
+  aria-label={title}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title>{title}</title>
+  <defs>
+    <linearGradient id="kidsLogoGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eccf6f"></stop>
+      <stop offset="1" stop-color="#c99a2c"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- wings: upper gold, lower sage green (right side, then mirrored) -->
+  <path d="M60 52 C72 28 100 24 104 46 C107 64 78 70 62 66 Z" fill="url(#kidsLogoGold)"></path>
+  <path d="M61 68 C80 70 94 80 86 96 C79 108 62 88 60 76 Z" fill="#6f8a4f"></path>
+  <g transform="translate(120,0) scale(-1,1)">
+    <path d="M60 52 C72 28 100 24 104 46 C107 64 78 70 62 66 Z" fill="url(#kidsLogoGold)"></path>
+    <path d="M61 68 C80 70 94 80 86 96 C79 108 62 88 60 76 Z" fill="#6f8a4f"></path>
+  </g>
+
+  <!-- joyful child as the butterfly's body -->
+  <g stroke="#2f3d29" stroke-width="4.6" stroke-linecap="round" fill="none">
+    <line x1="60" y1="58" x2="60" y2="80"></line>
+    <path d="M60 63 L50 52"></path>
+    <path d="M60 63 L70 52"></path>
+    <path d="M60 80 L52 93"></path>
+    <path d="M60 80 L68 93"></path>
+  </g>
+  <circle cx="60" cy="49" r="6.2" fill="#2f3d29"></circle>
+
+  <!-- antennae with happy terracotta tips -->
+  <path
+    d="M57 44 C54 39 52 37 51 33 M63 44 C66 39 68 37 69 33"
+    fill="none"
+    stroke="#2f3d29"
+    stroke-width="2"
+    stroke-linecap="round"></path>
+  <circle cx="51" cy="33" r="2.1" fill="#c97a5f"></circle>
+  <circle cx="69" cy="33" r="2.1" fill="#c97a5f"></circle>
+</svg>

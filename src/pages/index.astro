@@ -4,7 +4,7 @@ import BookingButton from "@/components/BookingButton.astro";
 import type { ProfessionalService, WithContext } from "schema-dts";
 
 const description =
-  "Solution Focused Hypnotherapy with Dalia McMillan in Brighton, UK — and online. A forward-thinking, practical approach to feeling calmer, moving forward, and freeing yourself from patterns that no longer serve you.";
+  "Solution Focused Hypnotherapy with Dalia McMillan in Brighton, UK — and online. A gentle, practical way for adults, children and teens to ease anxiety, sleep better, and find calm and confidence again.";
 
 const schema: WithContext<ProfessionalService> = {
   "@context": "https://schema.org",
@@ -105,13 +105,13 @@ const helpCards = [
           class="font-display text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-[68px] animate-fade-up"
           style="animation-delay: 80ms;"
         >
-          Change your <em class="italic text-primary">mind.</em>
+          Feel like <em class="italic text-primary">yourself</em> again.
         </h1>
         <p
           class="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl animate-fade-up"
           style="animation-delay: 160ms;"
         >
-          Solution Focused Hypnotherapy with Dalia McMillan — a forward-thinking, practical approach to feeling calmer, moving forward, and freeing yourself from patterns that no longer serve you. In person in Brighton, or online wherever you are.
+          Solution Focused Hypnotherapy with Dalia McMillan — a gentle, practical way to ease anxiety, sleep better, and find your calm and confidence again. For adults, children and teens — in person in Brighton, or online wherever you are.
         </p>
         <div class="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style="animation-delay: 240ms;">
           <BookingButton size="lg" label="Book your free consultation" />
@@ -159,6 +159,54 @@ const helpCards = [
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <!-- Two paths: for you / for your child -->
+  <section aria-label="Who I work with" class="py-24 sm:py-28">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Who I work with</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          Support for you — and for your family.
+        </h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 md:grid-cols-2">
+        <a
+          href="/what-i-can-help-with/"
+          class="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-cream-200 bg-background p-10 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-medium"
+        >
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">For you</p>
+          <h3 class="mt-4 font-display text-3xl leading-tight text-foreground sm:text-[34px]">
+            When life feels heavier than it should.
+          </h3>
+          <p class="mt-4 flex-1 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+            Anxiety, stress, low mood, sleepless nights, habits you can't shake, confidence that's slipped away. A forward-looking approach that helps you feel calmer, think more clearly, and move forward.
+          </p>
+          <span class="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+            What I can help with
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <a
+          href="/children/"
+          class="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-cream-200 bg-background p-10 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-sage-300 hover:shadow-medium"
+        >
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">For your child</p>
+          <h3 class="mt-4 font-display text-3xl leading-tight text-foreground sm:text-[34px]">
+            When worry is running their world.
+          </h3>
+          <p class="mt-4 flex-1 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+            School refusal, sleepless nights, friendship struggles, worries too big for small shoulders. A gentle, kind approach that helps anxious children and teens find their calm and confidence again.
+          </p>
+          <span class="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+            How I help children &amp; teens
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-0.5" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 

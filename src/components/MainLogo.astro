@@ -1,0 +1,49 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+  title?: string;
+}
+const {
+  size = 96,
+  class: className,
+  title = "Dalia McMillan — hypnotherapy and psychotherapy",
+} = Astro.props;
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 80 80"
+  role="img"
+  aria-label={title}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title>{title}</title>
+  <defs>
+    <linearGradient id="mainLogoSun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3e0a0"></stop>
+      <stop offset="1" stop-color="#d8ac42"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- radiating outer ring (faint, same gold, raised with the sun) -->
+  <circle cx="40" cy="26" r="20.5" fill="none" stroke="#f2dd97" stroke-opacity="0.5" stroke-width="2.2"></circle>
+  <!-- sun, raised behind the figure like a halo / dawn -->
+  <circle cx="40" cy="26" r="16" fill="url(#mainLogoSun)"></circle>
+
+  <!-- figure with arms open to the light -->
+  <g stroke="#425935" stroke-width="6" stroke-linecap="round" fill="none">
+    <line x1="40" y1="33" x2="40" y2="52"></line>
+    <path d="M40 38 L27 31"></path>
+    <path d="M40 38 L53 31"></path>
+    <path d="M40 52 L33 63"></path>
+    <path d="M40 52 L47 63"></path>
+  </g>
+  <circle cx="40" cy="28" r="5.2" fill="#425935"></circle>
+
+  <!-- open hands, terracotta spark (family with the kids logo) -->
+  <circle cx="27" cy="31" r="2.2" fill="#c97a5f"></circle>
+  <circle cx="53" cy="31" r="2.2" fill="#c97a5f"></circle>
+</svg>

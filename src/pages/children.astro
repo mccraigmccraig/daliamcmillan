@@ -1,0 +1,172 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BookingButton from "@/components/BookingButton.astro";
+
+const description =
+  "Gentle Solution Focused Hypnotherapy for anxious children and teens in Brighton and online — help with school refusal, sleep, worries and friendship struggles. Free, no-pressure consultation for parents.";
+
+const struggles = [
+  {
+    title: "School refusal",
+    body: "Mornings that end in tears, tummy aches on Sunday nights, a child who can't face the school gates.",
+  },
+  {
+    title: "Sleep & separation",
+    body: "Bedtimes that take hours, a child who can't sleep alone, or wakes anxious in the night.",
+  },
+  {
+    title: "Friendships & confidence",
+    body: "Falling out with friends, feeling left out, a growing quietness where their spark used to be.",
+  },
+  {
+    title: "Worries too big for them",
+    body: "Overthinking, catastrophising, fears that have grown louder than everything else.",
+  },
+];
+
+const sessionPoints = [
+  {
+    title: "Nothing is done to your child",
+    body: "There's no swinging watch and no loss of control. Sessions are simply talking, relaxation and guided imagination — your child stays aware and in charge the whole time.",
+  },
+  {
+    title: "Children actually enjoy it",
+    body: "We talk about the good things in their week, how their brain works (kids love this bit), and finish with deep relaxation. Most children look forward to sessions.",
+  },
+  {
+    title: "You stay involved",
+    body: "You're welcome in the room with younger children, and you'll always know what we're working on and how to support it at home.",
+  },
+  {
+    title: "Small steps, at their pace",
+    body: "We never push. Change comes gently, one manageable step at a time — which is exactly how confidence is rebuilt.",
+  },
+];
+---
+
+<Layout title="Hypnotherapy for children & teens" description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
+    <div class="container py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">For children &amp; teens</p>
+        <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          Help your child feel like <em class="italic text-primary">themselves</em> again.
+        </h1>
+        <p class="mt-8 text-lg leading-relaxed text-foreground/85 sm:text-xl">
+          If your child is refusing school, can't sleep alone, or is carrying worries too heavy for them — you're not failing, and you're not out of options. Solution Focused Hypnotherapy is a gentle, kind approach that helps anxious children and teens find their calm and confidence again.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <BookingButton size="lg" label="Book a free, no-pressure chat" />
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 text-[15px] font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            Get in touch
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-muted-foreground">
+          Tell me what's going on, and I'll tell you honestly whether I can help. I work with children over 8, in person in Brighton or online.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What they're living through -->
+  <section class="py-20 sm:py-24">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Sound familiar?</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          When anxiety is running family life.
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground">
+          Watching your happy child disappear behind worry is heartbreaking — and exhausting. These are some of the things parents bring to me.
+        </p>
+      </div>
+
+      <ul class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {struggles.map((item) => (
+          <li class="flex h-full flex-col rounded-2xl border border-cream-200 bg-background p-7 shadow-soft">
+            <h3 class="font-display text-xl leading-snug text-foreground">{item.title}</h3>
+            <p class="mt-3 flex-1 text-[15px] leading-relaxed text-muted-foreground">{item.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- What a session looks like -->
+  <section class="py-24 sm:py-28 bg-cream-50 border-y border-cream-200/70">
+    <div class="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">What to expect</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          What a session with a child actually looks like.
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-foreground/85">
+          The word "hypnotherapy" can sound worrying when it's your child. In reality, sessions are calm, friendly and surprisingly ordinary — and your child is never asked to do anything they don't want to.
+        </p>
+      </div>
+
+      <ul class="max-w-xl space-y-6 border-l border-sage-200 pl-6 self-center">
+        {sessionPoints.map((point) => (
+          <li>
+            <p class="font-display text-lg text-foreground">{point.title}</p>
+            <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">{point.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- For parents too -->
+  <section class="py-24 sm:py-28">
+    <div class="container">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">For parents too</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          A calmer household helps everyone.
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-muted-foreground">
+          Living alongside an anxious child is anxious work. Many parents find that a few sessions for themselves — easing their own worry, sleeping better, feeling steadier — is one of the most powerful things they can do for their child. If that sounds like you, we can talk about it too.
+        </p>
+        <a
+          href="/what-i-can-help-with/"
+          class="mt-8 inline-flex items-center gap-2 border-b border-primary/60 pb-1 text-[15px] font-medium text-primary hover:border-primary"
+        >
+          How I work with adults
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-24 sm:pb-32">
+    <div class="container">
+      <div class="mx-auto max-w-3xl rounded-[2rem] border border-cream-200 bg-cream-50 p-10 text-center shadow-soft sm:p-14">
+        <h2 class="font-display text-3xl leading-tight sm:text-[36px]">
+          Start with a free, no-pressure conversation.
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          Just you and me — no need to bring your child to the first chat. Tell me what's going on, ask anything you like, and I'll tell you honestly whether I think I can help.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <BookingButton size="lg" label="Book a free consultation" />
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 text-[15px] font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            Get in touch
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-muted-foreground">
+          Or email
+          <a href="mailto:dalia@daliamcmillan.uk" class="text-primary underline underline-offset-4 hover:text-terracotta-500">dalia@daliamcmillan.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
