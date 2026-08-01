@@ -32,7 +32,7 @@ const isChildren = pathname.startsWith("/children/");
       )}
       <span class="flex flex-col leading-tight">
         <span class="font-display text-2xl md:text-3xl leading-none tracking-tight text-foreground">Dalia McMillan</span>
-        <span class="block text-[11px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.14em] text-muted-foreground mt-1.5">Hypnotherapy · Psychotherapy</span>
+        <span class="block text-[11px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.14em] text-muted-foreground mt-1.5">Solution Focused Hypnotherapy · Talking Therapy</span>
       </span>
     </a>
 
@@ -42,6 +42,7 @@ const isChildren = pathname.startsWith("/children/");
           href={link.href}
           class:list={[
             "text-[15px] transition-colors",
+            link.href === "/children/" ? "flex flex-col items-center gap-1" : "",
             isActive(link.href)
               ? "text-primary font-medium"
               : "text-muted-foreground hover:text-foreground",
@@ -49,6 +50,7 @@ const isChildren = pathname.startsWith("/children/");
           aria-current={isActive(link.href) ? "page" : undefined}
         >
           {link.label}
+          {link.href === "/children/" && <KidsLogo size={26} class="shrink-0" />}
         </a>
       ))}
     </nav>
@@ -88,7 +90,7 @@ const isChildren = pathname.startsWith("/children/");
           <a
             href={link.href}
             class:list={[
-              "block rounded-md px-3 py-3 text-base transition-colors",
+              "flex items-center gap-2 rounded-md px-3 py-3 text-base transition-colors",
               isActive(link.href)
                 ? "text-primary font-medium bg-cream-100"
                 : "text-foreground hover:bg-cream-100",
@@ -96,6 +98,7 @@ const isChildren = pathname.startsWith("/children/");
             aria-current={isActive(link.href) ? "page" : undefined}
           >
             {link.label}
+            {link.href === "/children/" && <KidsLogo size={22} class="shrink-0" />}
           </a>
         </li>
       ))}

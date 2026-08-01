@@ -1,6 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { Picture } from "astro:assets";
 import BookingButton from "@/components/BookingButton.astro";
+import daliaPhoto from "@/assets/dalia-photo.jpg";
 import type { ProfessionalService, WithContext } from "schema-dts";
 
 const description =
@@ -50,6 +52,7 @@ const schema: WithContext<ProfessionalService> = {
 
 const trustSignals = [
   "Trained with CPHT",
+  "Enhanced DBS checked",
   "Member of AfSFH",
   "Fully insured",
   "28 years in therapeutic practice",
@@ -99,7 +102,7 @@ const helpCards = [
       <div class="max-w-2xl">
         <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-cream-300 bg-background/70 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground animate-fade-up">
           <span class="h-1.5 w-1.5 rounded-full bg-terracotta-400"></span>
-          Brighton · In person &amp; online
+          Sussex · Hassocks · In person &amp; online
         </p>
         <h1
           class="font-display text-5xl leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-[68px] animate-fade-up"
@@ -111,7 +114,7 @@ const helpCards = [
           class="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl animate-fade-up"
           style="animation-delay: 160ms;"
         >
-          Solution Focused Hypnotherapy with Dalia McMillan — a gentle, practical way to ease anxiety, sleep better, and find your calm and confidence again. For adults, children and teens — in person in Brighton, or online wherever you are.
+          Solution Focused Hypnotherapy with Dalia McMillan — a gentle, practical way to ease anxiety, promote happiness, sleep better, and find your calm and confidence again. For adults, <a href="/children/" class="font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary">children and teens</a> — in person in Hassocks, Brighton and surrounding areas or online wherever you are.
         </p>
         <div class="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style="animation-delay: 240ms;">
           <BookingButton size="lg" label="Book your free consultation" />
@@ -126,10 +129,10 @@ const helpCards = [
       </div>
 
       <div class="relative animate-fade-up" style="animation-delay: 320ms;">
-        <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+        <div class="relative ml-auto aspect-[4/5] w-[74%] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
           <img
             src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=900&h=1125&fit=crop&auto=format&q=75"
-            alt="Soft morning light over the Brighton coastline — a calm, open horizon"
+            alt="A person standing with arms open to a sunrise — calm, hopeful, a new day"
             width="900"
             height="1125"
             loading="eager"
@@ -137,11 +140,21 @@ const helpCards = [
           />
           <div class="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent"></div>
         </div>
-        <div class="absolute -bottom-6 -left-6 hidden sm:block max-w-[220px] rounded-2xl bg-background/95 p-4 shadow-medium backdrop-blur">
-          <p class="text-xs uppercase tracking-[0.16em] text-terracotta-500">Your first step</p>
-          <p class="mt-2 text-sm leading-snug text-foreground">
-            A free initial consultation — no obligation, just a conversation.
-          </p>
+        <div class="absolute bottom-4 left-0 flex items-center gap-3 rounded-full bg-background/95 py-2 pl-2 pr-5 shadow-medium backdrop-blur">
+          <div class="h-32 w-32 shrink-0 overflow-hidden rounded-full ring-2 ring-cream-200">
+            <Picture
+              src={daliaPhoto}
+              formats={['webp']}
+              widths={[192, 384]}
+              alt="Dalia McMillan"
+              loading="eager"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div>
+            <p class="font-display text-base leading-none text-foreground">Dalia McMillan</p>
+            <p class="mt-1 text-xs text-muted-foreground">Your therapist — here to help</p>
+          </div>
         </div>
       </div>
     </div>
