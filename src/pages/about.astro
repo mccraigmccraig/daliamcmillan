@@ -5,7 +5,7 @@ import BookingButton from "@/components/BookingButton.astro";
 import daliaPhoto from "@/assets/dalia-photo.jpg";
 
 const description =
-  "About Dalia McMillan — hypnotherapist in Brighton with 28 years of therapeutic practice. Solution Focused Hypnotherapy in person and online, for adults and children over 8.";
+  "Dalia McMillan — Solution Focused Hypnotherapy in Hassocks, Brighton, Lewes and the surrounding villages, and online. For adults and children, with 28 years of therapeutic experience.";
 ---
 
 <Layout title="About" description={description}>
@@ -20,16 +20,16 @@ const description =
 
         <div class="mt-10 space-y-6 text-lg leading-relaxed text-foreground/85">
           <p>
-            I've been working in therapeutic and wellbeing practices for over 28 years, beginning as a qualified reflexologist and body worker. I hold Level 2 counselling training and am continuing to deepen my practice with further study at Level 3.
+            My journey into therapy began with the body. Over more than 28 years I've trained and worked in reflexology and structural body work — always drawn to helping people feel more at ease in themselves.
           </p>
           <p>
-            Alongside this, I'm an artist and teacher, and I bring that same creativity, empathy and understanding into the way I work with people.
+            Over time, I realised that true, lasting physical relief requires rewriting the subconscious patterns driving that stress — so my focus moved to the mind, with counselling training and years of meditation practice. Today I work in a modern, science-based way, through Solution Focused Hypnotherapy: an approach grounded in how the brain actually works, and where I've seen people make the deepest, most lasting change.
           </p>
           <p>
-            I'm passionate about helping people move forward, feel calmer, and free themselves from patterns that no longer serve them. You can feel confident that I've been trained with CPHT, an award-winning school, am fully insured, and am a member of AfSFH (the Association for Solution Focused Hypnotherapy).
+            I'm passionate about helping people move forward, feel calmer, and free themselves from patterns that no longer serve them. You can feel confident that I've trained with CPHT, an award-winning school, am fully insured, and am a member of the AfSFH (the Association for Solution Focused Hypnotherapy).
           </p>
           <p>
-            I see clients in person in Brighton, and online — whichever suits you best. I work with adults and children over 8.
+            I see clients in person in Hassocks, Brighton, Lewes and the surrounding villages, and online — whichever suits you best. I work with adults and children.
           </p>
         </div>
 
@@ -65,25 +65,25 @@ const description =
 
   <section class="py-24 sm:py-28 bg-cream-50 border-t border-cream-200/70">
     <div class="container grid gap-10 md:grid-cols-3">
-      {[
-        {
-          heading: "Where I work",
-          body: "In person in Brighton, and online — whichever suits you best.",
-        },
-        {
-          heading: "Who I work with",
-          body: "Adults and children over 8.",
-        },
-        {
-          heading: "How we begin",
-          body: "With a free initial consultation, so you can decide what feels right.",
-        },
-      ].map((item) => (
-        <div>
-          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">{item.heading}</p>
-          <p class="mt-3 font-display text-2xl leading-snug text-foreground">{item.body}</p>
-        </div>
-      ))}
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Where I work</p>
+        <ul class="mt-3 space-y-1 font-display text-2xl leading-snug text-foreground">
+          <li>Hassocks</li>
+          <li>Burgess Hill</li>
+          <li>Haywards Heath</li>
+          <li>Lewes</li>
+          <li>Brighton</li>
+          <li>Crawley and surrounding villages</li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Who I work with</p>
+        <p class="mt-3 font-display text-2xl leading-snug text-foreground">With adults, teenagers and children.</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">How we begin</p>
+        <p class="mt-3 font-display text-2xl leading-snug text-foreground">With a call to see how I can help you, and then a free 1-hour initial consultation to explain why you are feeling the way you do and what we can do about it.</p>
+      </div>
     </div>
   </section>
 </Layout>
