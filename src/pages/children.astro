@@ -1,6 +1,8 @@
 ---
+import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
+import boySport from "@/assets/kids-boy-sport.jpg";
 
 const description =
   "Gentle Solution Focused Hypnotherapy for anxious children and teens in Brighton and online — help with school refusal, sleep, worries and friendship struggles. Free, no-pressure consultation for parents.";
@@ -48,14 +50,17 @@ const sessionPoints = [
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
-    <div class="container py-20 lg:py-28">
-      <div class="max-w-3xl">
+    <div class="container grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-28">
+      <div>
         <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">For children &amp; teens</p>
         <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
           Help your child feel like <em class="italic text-primary">themselves</em> again.
         </h1>
         <p class="mt-8 text-lg leading-relaxed text-foreground/85 sm:text-xl">
           If your child is refusing school, can't sleep alone, or is carrying worries too heavy for them — you're not failing, and you're not out of options. Solution Focused Hypnotherapy is a gentle, kind approach that helps anxious children and teens find their calm and confidence again.
+        </p>
+        <p class="mt-5 text-base leading-relaxed text-muted-foreground">
+          With over ten years' experience working with young people as a teacher, I've seen these struggles first-hand — and how much can change.
         </p>
         <div class="mt-10 flex flex-wrap items-center gap-4">
           <BookingButton size="lg" label="Book a free, no-pressure chat" />
@@ -67,8 +72,78 @@ const sessionPoints = [
           </a>
         </div>
         <p class="mt-6 text-sm text-muted-foreground">
-          Tell me what's going on, and I'll tell you honestly whether I can help. I work with children over 8, in person in Brighton or online.
+          Tell me what's going on, and I'll tell you honestly whether I can help. I work with children, in person in Hassocks, Lewes, Brighton and the surrounding villages, or online.
         </p>
+      </div>
+
+      <div class="relative">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <img
+            src="https://images.unsplash.com/photo-1766888554093-a009ffa4d0e0?w=900&h=1125&fit=crop&auto=format&q=75"
+            alt="A child walking towards warm light through tall trees"
+            width="900"
+            height="1125"
+            loading="eager"
+            class="h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this approach works for children -->
+  <section class="pb-8 sm:pb-10">
+    <div class="container">
+      <p class="mx-auto max-w-3xl text-center text-xl leading-relaxed text-foreground/85">
+        Some children find it hard to speak about their negative experiences — and that's exactly why this approach works so well. It's positive and forward-looking, focused not on what's gone wrong, but on how they want things to be. Children often leave sessions feeling excited and hopeful about their future.
+      </p>
+    </div>
+  </section>
+
+  <!-- The other side — hope -->
+  <section class="py-16 sm:py-20">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">The other side</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          Picture them like this again.
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground">
+          Out of the dark and into the light — lighter, braver, back to themselves. This is what we gently work towards, together.
+        </p>
+      </div>
+      <div class="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-3">
+        <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <Picture
+            src={boySport}
+            formats={['webp']}
+            widths={[400, 700]}
+            alt="A boy leaping happily through hoops at a sports day"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <img
+            src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=700&h=875&fit=crop&auto=format&q=75"
+            alt="Children playing ball together in a tree-lined park"
+            width="700"
+            height="875"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <img
+            src="https://images.unsplash.com/photo-1772724317388-4d1d1cc45c09?w=700&h=875&fit=crop&crop=focalpoint&fp-x=0.55&fp-y=0.63&fp-z=1.7&bri=12&auto=format&q=75"
+            alt="Teenage friends laughing together"
+            width="700"
+            height="875"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -118,6 +193,21 @@ const sessionPoints = [
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <!-- A little about me -->
+  <section class="py-20 sm:py-24">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">A little about me</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          Over ten years alongside young people.
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-muted-foreground">
+          Before training in Solution Focused Hypnotherapy, I spent more than ten years as a teacher — over a decade working closely with children and teenagers, seeing the pressures they face and the worries they carry. That experience, more than anything, is what drew me to this work, and it's why supporting young people matters so much to me.
+        </p>
+      </div>
     </div>
   </section>
 

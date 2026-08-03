@@ -42,15 +42,15 @@ const isChildren = pathname.startsWith("/children/");
           href={link.href}
           class:list={[
             "text-[15px] transition-colors",
-            link.href === "/children/" ? "flex flex-col items-center gap-1" : "",
+            link.href === "/children/" ? "flex items-center gap-2" : "",
             isActive(link.href)
               ? "text-primary font-medium"
               : "text-muted-foreground hover:text-foreground",
           ]}
           aria-current={isActive(link.href) ? "page" : undefined}
         >
+          {link.href === "/children/" && <KidsLogo size={50} class="shrink-0" />}
           {link.label}
-          {link.href === "/children/" && <KidsLogo size={26} class="shrink-0" />}
         </a>
       ))}
     </nav>
