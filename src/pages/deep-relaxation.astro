@@ -1,0 +1,114 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BookingButton from "@/components/BookingButton.astro";
+
+const description =
+  "A free deep relaxation recording from Dalia McMillan — a gentle 33-minute Solution Focused hypnotherapy relaxation to ease anxiety, calm the mind and help you sleep. Listen any time.";
+---
+
+<Layout title="Free deep relaxation recording" description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
+    <div class="container grid items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-28">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Free to listen</p>
+        <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          A deep relaxation, <em class="italic text-primary">on me.</em>
+        </h1>
+        <p class="mt-8 text-lg leading-relaxed text-foreground/85 sm:text-xl">
+          This is a gentle relaxation you can listen to any time you need to unwind — the same kind of calm, guided trance I use in sessions. Find a quiet spot, pop your headphones in, and give yourself half an hour to simply let go.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-cream-100 shadow-medium">
+          <img
+            src="https://images.unsplash.com/photo-1761389495508-bc938dcf7c25?w=900&h=1125&fit=crop&auto=format&q=75"
+            alt="Soft sunlight falling through trees onto a still, quiet woodland lake"
+            width="900"
+            height="1125"
+            loading="eager"
+            class="h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Player -->
+  <section class="pb-6">
+    <div class="container">
+      <div class="mx-auto max-w-2xl rounded-[2rem] border border-cream-200 bg-background p-8 shadow-medium sm:p-10">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Deep Relaxation · 33 minutes</p>
+        <h2 class="mt-3 font-display text-3xl leading-snug sm:text-[34px]">
+          Press play, settle back, and let go.
+        </h2>
+        <audio controls preload="metadata" class="mt-6 w-full">
+          <source src="/audio/deep-relaxation.m4a" type="audio/mp4" />
+          Your browser can't play this audio —
+          <a href="/audio/deep-relaxation.m4a" class="text-primary underline underline-offset-4">download the recording instead</a>.
+        </audio>
+        <p class="mt-5 rounded-xl bg-cream-50 px-4 py-3 text-[13px] leading-relaxed text-muted-foreground">
+          <strong class="font-medium text-foreground">Please listen somewhere safe.</strong> This recording is designed to relax you deeply, so never listen while driving or operating machinery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to use it -->
+  <section class="py-20 sm:py-24">
+    <div class="container grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Getting the most from it</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          There's nothing to do but relax.
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-foreground/85">
+          You don't need to concentrate or "try" — simply let my voice wash over you. Many people find that listening regularly eases anxiety, quietens a busy mind and helps them drift off to sleep.
+        </p>
+      </div>
+
+      <ul class="space-y-5 self-center border-l border-sage-200 pl-6">
+        <li>
+          <p class="font-display text-lg text-foreground">Find a quiet, comfortable spot</p>
+          <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">Sit back or lie down somewhere you won't be disturbed — bedtime is perfect.</p>
+        </li>
+        <li>
+          <p class="font-display text-lg text-foreground">Use headphones if you can</p>
+          <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">They help the gentle background sounds carry you a little deeper.</p>
+        </li>
+        <li>
+          <p class="font-display text-lg text-foreground">Let yourself drift</p>
+          <p class="mt-1 text-[15px] leading-relaxed text-muted-foreground">If your mind wanders, that's fine — and if you fall asleep, even better.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-24 sm:pb-32">
+    <div class="container">
+      <div class="mx-auto max-w-3xl rounded-[2rem] bg-gradient-cta px-8 py-14 text-center shadow-medium sm:px-16">
+        <h2 class="font-display text-3xl leading-tight text-primary-foreground sm:text-4xl">
+          If this helps, imagine what we could do together.
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-primary-foreground/85">
+          A recording is a lovely start — but one-to-one sessions are tailored entirely to you, and that's where the deepest, most lasting change happens. The first consultation is always free.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <a
+            href="https://calendly.com/daliamcdalia"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 rounded-full bg-background px-8 py-4 text-base font-medium text-primary shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium"
+          >
+            Book your free consultation
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
