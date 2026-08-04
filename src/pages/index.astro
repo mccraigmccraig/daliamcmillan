@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { Picture } from "astro:assets";
 import BookingButton from "@/components/BookingButton.astro";
 import daliaPhoto from "@/assets/dalia-photo.jpg";
+import relaxPortrait from "@/assets/relax-portrait.jpg";
 import type { ProfessionalService, WithContext } from "schema-dts";
 
 const description =
@@ -125,6 +126,13 @@ const helpCards = [
             How it works
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
+          <a
+            href="#pricing"
+            class="inline-flex items-center gap-1.5 rounded-full px-5 py-3 text-[15px] font-medium text-foreground hover:text-primary transition-colors"
+          >
+            See prices
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
 
@@ -231,17 +239,15 @@ const helpCards = [
         <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
           What is Solution Focused Hypnotherapy?
         </h2>
-        <div class="mt-10 hidden lg:block">
-          <div class="relative overflow-hidden rounded-[1.75rem] bg-cream-100 shadow-soft aspect-[4/5]">
-            <img
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=1000&fit=crop&auto=format&q=75"
-              alt="Soft morning light across a natural linen throw and folded blanket — a quiet, unhurried moment"
-              width="800"
-              height="1000"
-              loading="lazy"
-              class="h-full w-full object-cover"
-            />
-          </div>
+        <div class="mt-10 hidden aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-cream-100 shadow-soft lg:block">
+          <Picture
+            src={relaxPortrait}
+            formats={['webp']}
+            widths={[500, 800]}
+            alt="A woman resting with her eyes closed in soft, warm light — deeply relaxed"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
         </div>
       </div>
 
@@ -316,6 +322,50 @@ const helpCards = [
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-24 sm:py-28">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Pricing</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          Simple, transparent pricing.
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground">
+          Everything begins with a free, no-obligation consultation.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <div class="flex flex-col rounded-[1.75rem] border border-cream-200 bg-background p-8 shadow-soft">
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Single session</p>
+          <p class="mt-4 font-display text-5xl tracking-tight text-foreground">£70</p>
+          <p class="mt-1 text-sm text-muted-foreground">per session, pay as you go</p>
+          <p class="mt-5 text-[15px] leading-relaxed text-muted-foreground">
+            One session at a time — no commitment, come as often as feels right.
+          </p>
+        </div>
+
+        <div class="relative flex flex-col rounded-[1.75rem] border-2 border-sage-300 bg-cream-50 p-8 shadow-soft">
+          <span class="absolute -top-3 right-6 rounded-full bg-primary px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-primary-foreground">Best value</span>
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Block of 6</p>
+          <p class="mt-4 font-display text-5xl tracking-tight text-foreground">£60<span class="text-2xl text-muted-foreground"> / session</span></p>
+          <p class="mt-1 text-sm text-muted-foreground">£360 for six sessions — save £60</p>
+          <p class="mt-5 text-[15px] leading-relaxed text-muted-foreground">
+            A course of six keeps momentum going, which is often where the deepest change happens.
+          </p>
+        </div>
+      </div>
+
+      <p class="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-muted-foreground">
+        The 1-hour initial consultation is always free. I also keep a couple of lower-cost spaces for families on tighter budgets — please just ask.
+      </p>
+
+      <div class="mt-10 flex justify-center">
+        <BookingButton size="lg" label="Book your free consultation" />
+      </div>
     </div>
   </section>
 
