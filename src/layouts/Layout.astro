@@ -25,9 +25,11 @@ const {
 	title: pageTitle,
 	description = SITE_DESCRIPTION,
 	noindex = false,
-	socialImageUrl,
+	socialImageUrl = "/og-image.png",
 	schema,
 } = Astro.props;
+
+const socialImage = new URL(socialImageUrl, Astro.site ?? url.origin).href;
 
 const title = pageTitle
 	? `${pageTitle} | ${SITE_NAME}`
@@ -50,14 +52,14 @@ const title = pageTitle
     <meta property="og:url" content={url.href} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
-    {socialImageUrl && (
-      <meta property="og:image" content={socialImageUrl} />
-      <meta property="og:image:alt" content={title} />
-    )}
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {socialImageUrl && <meta name="twitter:image" content={socialImageUrl} />}
+    <meta name="twitter:image" content={socialImage} />
     <Font cssVariable="--font-display" preload />
     <Font cssVariable="--font-body" preload />
     {schema && (Array.isArray(schema)
