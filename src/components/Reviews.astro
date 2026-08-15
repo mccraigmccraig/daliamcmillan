@@ -1,0 +1,104 @@
+---
+// Reviews / testimonials section.
+//
+// HOW TO ADD YOUR REAL GOOGLE REVIEWS:
+//   1. Open your Google Business profile reviews.
+//   2. For each review, copy the quote, the reviewer's name (or first name +
+//      last initial, e.g. "Sarah T."), and add an entry to `reviews` below.
+//   3. Replace the PLACEHOLDER entries — do not leave them on the live site.
+//   4. Set `googleReviewsUrl` to your Google reviews link so the button works.
+//
+// Only use real reviews. Every review shows as 5 stars; change `rating`
+// on an entry if a particular review was fewer stars.
+
+const googleReviewsUrl = "https://share.google/W8ejmp8nh6sCBHlFQ";
+
+type Review = {
+  quote: string;
+  name: string;
+  detail?: string; // e.g. "Anxiety" or "Brighton" — optional context
+  rating?: number; // defaults to 5
+};
+
+const reviews: Review[] = [
+  {
+    quote:
+      "Therapy with Dalia McMillan completely transformed my life — she gave me real, practical tools to use for life to regain my clarity, confidence, and life purpose.",
+    name: "Kuridakuya Mubwandarikwa",
+    detail: "Confidence & clarity",
+  },
+  {
+    quote:
+      "Dalia has such a gentle, kind and calming approach — it immediately puts you at ease. She helped me to overcome my fear of flying, for which I'm very grateful.",
+    name: "Ivona Weinstein",
+    detail: "Fear of flying",
+  },
+  {
+    quote:
+      "Dalia's hypnosis session is a blast of positive energy — her infectious enthusiasm for life permeates the session, and the guided scenes we entered allowed me to see aspects of life differently. She is caring and very easy to talk to; she creates a space that feels both gentle and non-judgemental, where one can open up and then move forwards much more confidently.",
+    name: "Marijke",
+    detail: "Confidence & positivity",
+  },
+];
+
+const totalStars = 5;
+---
+
+<section aria-label="Reviews" class="py-24 sm:py-28 bg-cream-50 border-y border-cream-200/70">
+  <div class="container">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Reviews</p>
+      <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+        Kind words from the people I've worked with.
+      </h2>
+
+      <!-- Google rating summary -->
+      <div class="mt-6 inline-flex items-center gap-3 rounded-full border border-cream-300 bg-background px-5 py-2.5 shadow-soft">
+        <span class="flex items-center gap-0.5" aria-hidden="true">
+          {Array.from({ length: totalStars }).map(() => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f5b301" stroke="none"><path d="M12 2.5l2.9 6.06 6.6.72-4.93 4.44 1.35 6.53L12 17.9l-5.92 2.36 1.35-6.53L2.5 9.28l6.6-.72L12 2.5z"/></svg>
+          ))}
+        </span>
+        <span class="text-sm font-medium text-foreground">5.0 on Google</span>
+      </div>
+    </div>
+
+    <ul class="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {reviews.map((review) => (
+        <li class="flex h-full flex-col rounded-[1.5rem] border border-cream-200 bg-background p-8 shadow-soft">
+          <div class="flex items-center gap-0.5" aria-label={`${review.rating ?? 5} out of 5 stars`}>
+            {Array.from({ length: review.rating ?? 5 }).map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f5b301" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.06 6.6.72-4.93 4.44 1.35 6.53L12 17.9l-5.92 2.36 1.35-6.53L2.5 9.28l6.6-.72L12 2.5z"/></svg>
+            ))}
+          </div>
+          <blockquote class="mt-5 flex-1 text-[17px] leading-relaxed text-foreground/85">
+            <p>&ldquo;{review.quote}&rdquo;</p>
+          </blockquote>
+          <footer class="mt-6 flex items-center gap-3 border-t border-cream-200 pt-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sage-100 font-display text-base text-sage-600" aria-hidden="true">
+              {review.name.trim().charAt(0)}
+            </span>
+            <span class="text-sm">
+              <span class="block font-medium text-foreground">{review.name}</span>
+              {review.detail && (
+                <span class="block text-muted-foreground">{review.detail}</span>
+              )}
+            </span>
+          </footer>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-12 flex justify-center">
+      <a
+        href={googleReviewsUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-cream-300 bg-background px-6 py-3 text-[15px] font-medium text-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium"
+      >
+        Read more reviews on Google
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

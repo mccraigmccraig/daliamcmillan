@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { Picture } from "astro:assets";
 import BookingButton from "@/components/BookingButton.astro";
+import Reviews from "@/components/Reviews.astro";
 import daliaPhoto from "@/assets/dalia-photo.jpg";
 import relaxPortrait from "@/assets/relax-portrait.jpg";
 import type { ProfessionalService, WithContext } from "schema-dts";
@@ -230,6 +231,9 @@ const helpCards = [
       </div>
     </div>
   </section>
+
+  <!-- Reviews -->
+  <Reviews />
 
   <!-- What is SFH -->
   <section class="py-24 sm:py-32">

@@ -8,6 +8,17 @@ const links = [
   { href: "/deep-relaxation/", label: "Free relaxation" },
   { href: "/contact/", label: "Contact" },
 ];
+
+const socials = [
+  {
+    label: "Follow on Facebook",
+    href: "https://www.facebook.com/profile.php?id=61593327893101",
+  },
+  {
+    label: "Follow on Instagram",
+    href: "https://www.instagram.com/daliamcmillantherapy",
+  },
+];
 ---
 
 <footer class="mt-24 border-t border-cream-200/70 bg-cream-50">
@@ -25,6 +36,26 @@ const links = [
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
           Solution Focused Hypnotherapy with Dalia McMillan. In Hassocks, Brighton, Lewes and the surrounding villages, or online wherever you are.
         </p>
+
+        <ul class="mt-6 flex items-center gap-3">
+          {socials.map((social) => (
+            <li>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener"
+                aria-label={social.label}
+                class="grid h-10 w-10 place-items-center rounded-full border border-cream-300 bg-background text-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:border-sage-300 hover:text-primary hover:shadow-medium"
+              >
+                {social.label.includes("Facebook") ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <nav aria-label="Footer" class="md:justify-self-center">
