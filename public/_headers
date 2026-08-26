@@ -34,6 +34,10 @@
 /browserconfig.xml
   Cache-Control: public, max-age=86400
 
+/dalia-mcmillan.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Cache-Control: public, max-age=86400
+
 /
 
   Link: </sitemap-index.xml>; rel="sitemap", </llms.txt>; rel="describedby"; type="text/plain"
