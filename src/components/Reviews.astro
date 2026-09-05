@@ -35,7 +35,7 @@ const totalStars = 5;
     <ul class="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
       {reviews.map((review) => (
         <li class="flex h-full flex-col rounded-[1.5rem] border border-cream-200 bg-background p-8 shadow-soft">
-          <div class="flex items-center gap-0.5" aria-label={`${review.rating ?? 5} out of 5 stars`}>
+          <div class="flex items-center gap-0.5" role="img" aria-label={`${review.rating ?? 5} out of 5 stars`}>
             {Array.from({ length: review.rating ?? 5 }).map(() => (
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f5b301" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.06 6.6.72-4.93 4.44 1.35 6.53L12 17.9l-5.92 2.36 1.35-6.53L2.5 9.28l6.6-.72L12 2.5z"/></svg>
             ))}

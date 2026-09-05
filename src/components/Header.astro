@@ -24,12 +24,11 @@ const isChildren = pathname.startsWith("/children/");
     <a
       href="/"
       class="group flex items-center gap-2.5"
-      aria-label="Dalia McMillan — home"
     >
       {isChildren ? (
-        <KidsLogo size={116} class="shrink-0 transition-transform duration-500 group-hover:-rotate-[6deg]" />
+        <KidsLogo size={116} decorative class="shrink-0 transition-transform duration-500 group-hover:-rotate-[6deg]" />
       ) : (
-        <MainLogo size={100} class="shrink-0 transition-transform duration-500 group-hover:-rotate-[4deg]" />
+        <MainLogo size={100} decorative class="shrink-0 transition-transform duration-500 group-hover:-rotate-[4deg]" />
       )}
       <span class="flex flex-col leading-tight">
         <span class="font-display text-2xl md:text-3xl leading-none tracking-tight text-foreground">Dalia McMillan</span>
@@ -50,7 +49,7 @@ const isChildren = pathname.startsWith("/children/");
           ]}
           aria-current={isActive(link.href) ? "page" : undefined}
         >
-          {link.href === "/children/" && <KidsLogo size={50} class="shrink-0" />}
+          {link.href === "/children/" && <KidsLogo size={50} decorative class="shrink-0" />}
           {link.label}
         </a>
       ))}
@@ -99,7 +98,7 @@ const isChildren = pathname.startsWith("/children/");
             aria-current={isActive(link.href) ? "page" : undefined}
           >
             {link.label}
-            {link.href === "/children/" && <KidsLogo size={22} class="shrink-0" />}
+            {link.href === "/children/" && <KidsLogo size={22} decorative class="shrink-0" />}
           </a>
         </li>
       ))}
