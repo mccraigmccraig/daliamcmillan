@@ -22,7 +22,13 @@ export default defineConfig({
   image: { service: imageService() },
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        // Stamp a build-time lastmod on every URL for crawl-freshness signals.
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
     agentsSummary(),
     pagefind(),
     ...(devToolbar.enabled ? [astroAgentAnnotate()] : []),
