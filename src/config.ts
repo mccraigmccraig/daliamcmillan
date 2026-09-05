@@ -20,8 +20,11 @@ export const SITE_URL = "https://daliamcmillan.uk";
 
 /** Canonical business / practitioner facts. Keep in sync with contact page + llms.txt. */
 export const BUSINESS = {
-  name: "Dalia McMillan",
-  alternateName: "Dalia McMillan Hypnotherapy",
+  /** Trading name — must match the Google Business Profile name field. */
+  name: "Dalia McMillan Solution Focused Hypnotherapy",
+  alternateName: "Dalia McMillan",
+  /** The practitioner's personal name (distinct from the business name). */
+  personName: "Dalia McMillan",
   jobTitle: "Solution Focused Hypnotherapist",
   email: "daliamcmillantherapy@gmail.com",
   /** E.164 for tel: links and schema. */
@@ -120,7 +123,7 @@ export const reviews: Review[] = [
 function personCore() {
   return {
     "@type": "Person" as const,
-    name: BUSINESS.name,
+    name: BUSINESS.personName,
     jobTitle: BUSINESS.jobTitle,
     email: BUSINESS.email,
     telephone: BUSINESS.telephone,
