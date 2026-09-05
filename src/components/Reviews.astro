@@ -1,45 +1,14 @@
 ---
 // Reviews / testimonials section.
 //
-// HOW TO ADD YOUR REAL GOOGLE REVIEWS:
-//   1. Open your Google Business profile reviews.
-//   2. For each review, copy the quote, the reviewer's name (or first name +
-//      last initial, e.g. "Sarah T."), and add an entry to `reviews` below.
-//   3. Replace the PLACEHOLDER entries — do not leave them on the live site.
-//   4. Set `googleReviewsUrl` to your Google reviews link so the button works.
+// Reviews live in src/config.ts (`reviews`) so the same data feeds both this
+// section and the Review / AggregateRating structured data on the homepage.
+// To add a real Google review, add an entry there and set `googleReviewsUrl`.
 //
 // Only use real reviews. Every review shows as 5 stars; change `rating`
 // on an entry if a particular review was fewer stars.
 
-const googleReviewsUrl = "https://share.google/W8ejmp8nh6sCBHlFQ";
-
-type Review = {
-  quote: string;
-  name: string;
-  detail?: string; // e.g. "Anxiety" or "Brighton" — optional context
-  rating?: number; // defaults to 5
-};
-
-const reviews: Review[] = [
-  {
-    quote:
-      "Therapy with Dalia McMillan completely transformed my life — she gave me real, practical tools to use for life to regain my clarity, confidence, and life purpose.",
-    name: "Kuridakuya Mubwandarikwa",
-    detail: "Confidence & clarity",
-  },
-  {
-    quote:
-      "Dalia has such a gentle, kind and calming approach — it immediately puts you at ease. She helped me to overcome my fear of flying, for which I'm very grateful.",
-    name: "Ivona Weinstein",
-    detail: "Fear of flying",
-  },
-  {
-    quote:
-      "Dalia's hypnosis session is a blast of positive energy — her infectious enthusiasm for life permeates the session, and the guided scenes we entered allowed me to see aspects of life differently. She is caring and very easy to talk to; she creates a space that feels both gentle and non-judgemental, where one can open up and then move forwards much more confidently.",
-    name: "Marijke",
-    detail: "Confidence & positivity",
-  },
-];
+import { reviews, googleReviewsUrl } from "@/config";
 
 const totalStars = 5;
 ---

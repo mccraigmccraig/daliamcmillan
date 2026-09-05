@@ -5,52 +5,12 @@ import BookingButton from "@/components/BookingButton.astro";
 import Reviews from "@/components/Reviews.astro";
 import daliaPhoto from "@/assets/dalia-photo.jpg";
 import relaxPortrait from "@/assets/relax-portrait.jpg";
-import type { ProfessionalService, WithContext } from "schema-dts";
+import { professionalServiceSchema } from "@/config";
 
 const description =
-  "Solution Focused Hypnotherapy with Dalia McMillan in Brighton, UK — and online. A gentle, practical way for adults, children and teens to ease anxiety, sleep better, and find calm and confidence again.";
+  "Solution Focused Hypnotherapy with Dalia McMillan in Hassocks, Brighton and online — a gentle, practical way to ease anxiety, sleep better and feel calmer.";
 
-const schema: WithContext<ProfessionalService> = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Dalia McMillan",
-  alternateName: "Dalia McMillan Hypnotherapy",
-  description,
-  url: Astro.site?.href ?? Astro.url.origin,
-  image: `${Astro.site?.origin ?? Astro.url.origin}/favicon.svg`,
-  email: "daliamcmillantherapy@gmail.com",
-  areaServed: [
-    { "@type": "City", name: "Brighton" },
-    { "@type": "Country", name: "United Kingdom" },
-    "Online",
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Brighton",
-    addressCountry: "GB",
-  },
-  provider: {
-    "@type": "Person",
-    name: "Dalia McMillan",
-    jobTitle: "Solution Focused Hypnotherapist",
-    worksFor: { "@type": "Organization", name: "Dalia McMillan" },
-  },
-  potentialAction: {
-    "@type": "ReserveAction",
-    target: "https://calendly.com/daliamcdalia",
-    name: "Book a free initial consultation",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Solution Focused Hypnotherapy sessions",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Anxiety, stress & trauma" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Habits & addiction" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Confidence & performance" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sleep, mood & pain" } },
-    ],
-  },
-};
+const schema = professionalServiceSchema(description);
 
 const trustSignals = [
   "Trained with CPHT",

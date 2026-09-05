@@ -1,12 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
+import { breadcrumbSchema } from "@/config";
 
 const description =
-  "A free deep relaxation recording from Dalia McMillan — a gentle 33-minute Solution Focused hypnotherapy relaxation to ease anxiety, calm the mind and help you sleep. Listen any time.";
+  "A free 33-minute deep relaxation recording from hypnotherapist Dalia McMillan — a gentle guided trance to ease anxiety, calm your mind and help you sleep.";
+
+const schema = breadcrumbSchema([{ name: "Free relaxation", path: "/deep-relaxation/" }]);
 ---
 
-<Layout title="Free deep relaxation recording" description={description}>
+<Layout title="Free deep relaxation recording" description={description} schema={schema}>
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>

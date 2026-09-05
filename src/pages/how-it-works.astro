@@ -1,11 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { breadcrumbSchema } from "@/config";
 
 const description =
-  "How Solution Focused Hypnotherapy works — neuroscience, psychotherapy, NLP and CBT combined. A typical session, and what to expect from your free initial consultation with Dalia McMillan in Brighton.";
+  "How Solution Focused Hypnotherapy works — neuroscience, psychotherapy, NLP and CBT combined. What a typical session and your free consultation involve.";
+
+const schema = breadcrumbSchema([{ name: "How it works", path: "/how-it-works/" }]);
 ---
 
-<Layout title="How it works" description={description}>
+<Layout
+  title="How Solution Focused Hypnotherapy Works"
+  description={description}
+  schema={schema}
+>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
     <div class="container py-20 lg:py-28">

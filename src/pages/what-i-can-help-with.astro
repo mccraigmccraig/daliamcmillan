@@ -1,9 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
+import { serviceSchema, breadcrumbSchema } from "@/config";
 
 const description =
-  "Solution Focused Hypnotherapy in Brighton and online — for anxiety, stress, trauma, habits, addiction, confidence, performance, sleep, mood and pain. Adults and children.";
+  "Solution Focused Hypnotherapy in Hassocks, Brighton and online for anxiety, stress, trauma, habits, addiction, confidence, sleep and pain — adults and children.";
+
+const schema = [
+  serviceSchema({
+    name: "Solution Focused Hypnotherapy",
+    description,
+    path: "/what-i-can-help-with/",
+    serviceType: "Solution Focused Hypnotherapy",
+  }),
+  breadcrumbSchema([{ name: "What I can help with", path: "/what-i-can-help-with/" }]),
+];
 
 const groups = [
   {
@@ -29,7 +40,11 @@ const groups = [
 ];
 ---
 
-<Layout title="What I can help with" description={description}>
+<Layout
+  title="Hypnotherapy for Anxiety & Confidence"
+  description={description}
+  schema={schema}
+>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
     <div class="container py-20 lg:py-28">

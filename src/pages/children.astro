@@ -3,9 +3,20 @@ import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
 import boySport from "@/assets/kids-boy-sport.jpg";
+import { serviceSchema, breadcrumbSchema } from "@/config";
 
 const description =
-  "Gentle Solution Focused Hypnotherapy for anxious children and teens in Brighton and online — help with school refusal, sleep, worries and friendship struggles. Free, no-pressure consultation for parents.";
+  "Gentle hypnotherapy for anxious children and teens in Hassocks, Brighton and online — for school refusal, sleep, worries and friendships. Free consultation.";
+
+const schema = [
+  serviceSchema({
+    name: "Hypnotherapy for children & teens",
+    description,
+    path: "/children/",
+    serviceType: "Hypnotherapy for children and teenagers",
+  }),
+  breadcrumbSchema([{ name: "Children & teens", path: "/children/" }]),
+];
 
 const struggles = [
   {
@@ -46,7 +57,7 @@ const sessionPoints = [
 ];
 ---
 
-<Layout title="Hypnotherapy for children & teens" description={description} socialImageUrl="/og-children.png">
+<Layout title="Hypnotherapy for children & teens" description={description} socialImageUrl="/og-children.png" schema={schema}>
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>

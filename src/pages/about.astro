@@ -3,12 +3,22 @@ import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
 import daliaPhoto from "@/assets/dalia-photo.jpg";
+import { personSchema, breadcrumbSchema } from "@/config";
 
 const description =
-  "Dalia McMillan — Solution Focused Hypnotherapy in Hassocks, Brighton, Lewes and the surrounding villages, and online. For adults and children, with 28 years of therapeutic experience.";
+  "Meet Dalia McMillan, Solution Focused Hypnotherapist in Hassocks, Brighton, Lewes and online — 28 years' experience helping adults and children feel calmer.";
+
+const schema = [
+  personSchema(),
+  breadcrumbSchema([{ name: "About", path: "/about/" }]),
+];
 ---
 
-<Layout title="About" description={description}>
+<Layout
+  title="About — Hypnotherapy, Hassocks & Brighton"
+  description={description}
+  schema={schema}
+>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
     <div class="container grid gap-16 py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-20 lg:py-28">

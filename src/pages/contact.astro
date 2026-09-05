@@ -1,12 +1,22 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
+import { contactPageSchema, breadcrumbSchema } from "@/config";
 
 const description =
-  "Get in touch with Dalia McMillan — Solution Focused Hypnotherapy in Hassocks, Lewes, Brighton and the surrounding villages, and online. Free initial consultation. Email daliamcmillantherapy@gmail.com.";
+  "Get in touch with Dalia McMillan — hypnotherapy in Hassocks, Brighton, Lewes and online. Book a free initial consultation, or call, text or email me today.";
+
+const schema = [
+  contactPageSchema(description),
+  breadcrumbSchema([{ name: "Contact", path: "/contact/" }]),
+];
 ---
 
-<Layout title="Contact" description={description}>
+<Layout
+  title="Book a Free Hypnotherapy Consultation"
+  description={description}
+  schema={schema}
+>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
     <div class="container py-20 lg:py-28">
