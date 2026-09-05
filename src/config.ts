@@ -31,11 +31,14 @@ export const BUSINESS = {
   bookingUrl: "https://calendly.com/daliamcdalia",
   /** £60–£70 per session → "££" per schema.org priceRange convention. */
   priceRange: "££",
-  /** Real, indexable image (1200×630 OG card) rather than the favicon. */
-  image: `${SITE_URL}/og-image.png`,
+  /** Portrait of the practitioner — a real photo for Person / knowledge panels. */
+  image: `${SITE_URL}/dalia-mcmillan.jpg`,
   addressLocality: "Hassocks",
   addressRegion: "West Sussex",
   addressCountry: "GB",
+  /** Approximate Hassocks village centre — town-level, not the home address. */
+  latitude: 50.9231,
+  longitude: -0.1487,
 } as const;
 
 /** The business's stable @id, so per-page schema can reference the same entity. */
@@ -163,6 +166,11 @@ export function professionalServiceSchema(
     priceRange: BUSINESS.priceRange,
     areaServed: areaServed(),
     address: postalAddress(),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: BUSINESS.latitude,
+      longitude: BUSINESS.longitude,
+    },
     founder: personCore(),
     aggregateRating: {
       "@type": "AggregateRating",
