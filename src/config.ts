@@ -39,6 +39,11 @@ export const BUSINESS = {
   /** Approximate Hassocks village centre — town-level, not the home address. */
   latitude: 50.9231,
   longitude: -0.1487,
+  /** Google Business Profile identifiers (verified against the live listing). */
+  placeId: "ChIJo4FGACGNdUgR3O49Zb6-x7E",
+  cid: "12810417390030286556",
+  /** Canonical profile URL on Google Maps (by CID). */
+  mapsUrl: "https://maps.google.com/?cid=12810417390030286556",
 } as const;
 
 /** The business's stable @id, so per-page schema can reference the same entity. */
@@ -80,7 +85,11 @@ export type Review = {
   rating?: number; // defaults to 5
 };
 
-export const googleReviewsUrl = "https://share.google/W8ejmp8nh6sCBHlFQ";
+/** Read the Google reviews (canonical, by Place ID). */
+export const googleReviewsUrl = `https://search.google.com/local/reviews?placeid=${BUSINESS.placeId}`;
+
+/** Open Google's "write a review" dialog directly — best for a review CTA. */
+export const googleWriteReviewUrl = `https://search.google.com/local/writereview?placeid=${BUSINESS.placeId}`;
 
 export const reviews: Review[] = [
   {
@@ -164,6 +173,9 @@ export function professionalServiceSchema(
     email: BUSINESS.email,
     telephone: BUSINESS.telephone,
     priceRange: BUSINESS.priceRange,
+    // Ties the website entity to the Google Business Profile (same business).
+    sameAs: [BUSINESS.mapsUrl],
+    hasMap: BUSINESS.mapsUrl,
     areaServed: areaServed(),
     address: postalAddress(),
     geo: {

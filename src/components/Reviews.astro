@@ -8,7 +8,7 @@
 // Only use real reviews. Every review shows as 5 stars; change `rating`
 // on an entry if a particular review was fewer stars.
 
-import { reviews, googleReviewsUrl } from "@/config";
+import { reviews, googleReviewsUrl, googleWriteReviewUrl } from "@/config";
 
 const totalStars = 5;
 ---
@@ -58,7 +58,16 @@ const totalStars = 5;
       ))}
     </ul>
 
-    <div class="mt-12 flex justify-center">
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={googleWriteReviewUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-[15px] font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium"
+      >
+        Leave a review
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l2.9 6.06 6.6.72-4.93 4.44 1.35 6.53L12 17.9l-5.92 2.36 1.35-6.53L2.5 9.28l6.6-.72L12 2.5z"/></svg>
+      </a>
       <a
         href={googleReviewsUrl}
         target="_blank"
