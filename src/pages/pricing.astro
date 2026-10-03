@@ -1,0 +1,86 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BookingButton from "@/components/BookingButton.astro";
+import { pricingPageSchema, breadcrumbSchema, PRICING } from "@/config";
+
+const description =
+  "Hypnotherapy prices with Dalia McMillan in Hassocks, Brighton & online. A free one-hour initial consultation, then £70 for a single session or £60 a session in a block of six.";
+
+const schema = [
+  pricingPageSchema(description),
+  breadcrumbSchema([{ name: "Pricing", path: "/pricing/" }]),
+];
+
+const blockSaving = PRICING.singleSession * 6 - PRICING.blockOfSixTotal;
+---
+
+<Layout
+  title="Hypnotherapy Prices & Fees"
+  description={description}
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-warm opacity-70" aria-hidden="true"></div>
+    <div class="container py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Pricing</p>
+        <h1 class="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          Simple, <em class="italic text-primary">transparent</em> pricing.
+        </h1>
+        <p class="mt-8 text-lg leading-relaxed text-foreground/85 sm:text-xl">
+          Everything begins with a free, no-obligation consultation — so you can decide whether we're a good fit before committing to anything.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free consultation highlight -->
+  <section>
+    <div class="container">
+      <div class="mx-auto max-w-3xl rounded-[1.75rem] border border-sage-200 bg-cream-50 p-8 text-center shadow-soft sm:p-10">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Always free</p>
+        <h2 class="mt-3 font-display text-3xl tracking-tight">Your first hour is on me</h2>
+        <p class="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+          The one-hour initial consultation is completely free. It includes a simple explanation of the neuroscience, so you feel confident and in control from the very first step — with no pressure to book.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session pricing -->
+  <section class="py-14 sm:py-20">
+    <div class="container">
+      <div class="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
+        <!-- Single session -->
+        <div class="flex flex-col rounded-[1.75rem] border border-cream-200 bg-background p-8 shadow-soft">
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Single session</p>
+          <p class="mt-4 font-display text-5xl tracking-tight text-foreground">£{PRICING.singleSession}</p>
+          <p class="mt-1 text-sm text-muted-foreground">per session, pay as you go</p>
+          <p class="mt-5 flex-1 text-[15px] leading-relaxed text-muted-foreground">
+            One session at a time — no commitment, come as often as feels right for you.
+          </p>
+        </div>
+
+        <!-- Block of six -->
+        <div class="relative flex flex-col rounded-[1.75rem] border-2 border-sage-300 bg-cream-50 p-8 shadow-soft">
+          <span class="absolute -top-3 right-6 rounded-full bg-primary px-3 py-1 text-[11px] font-medium uppercase tracking-[0.1em] text-primary-foreground">Best value</span>
+          <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Block of six</p>
+          <p class="mt-4 font-display text-5xl tracking-tight text-foreground">£{PRICING.blockOfSixPerSession}<span class="text-2xl text-muted-foreground"> / session</span></p>
+          <p class="mt-1 text-sm text-muted-foreground">£{PRICING.blockOfSixTotal} for six sessions — save £{blockSaving}</p>
+          <p class="mt-5 flex-1 text-[15px] leading-relaxed text-muted-foreground">
+            A course of six keeps momentum going, which is often where the deepest, most lasting change happens — most people see real, positive change within this time.
+          </p>
+        </div>
+      </div>
+
+      <p class="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-muted-foreground">
+        I also keep a couple of lower-cost spaces for those on tighter budgets — please just ask. Sessions are available in person in Hassocks and Hove, or online wherever you are.
+      </p>
+
+      <div class="mt-10 flex justify-center">
+        <BookingButton size="lg" label="Book your free consultation" />
+      </div>
+    </div>
+  </section>
+</Layout>

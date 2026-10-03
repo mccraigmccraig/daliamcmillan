@@ -49,6 +49,15 @@ export const BUSINESS = {
   mapsUrl: "https://maps.google.com/?cid=12810417390030286556",
 } as const;
 
+/** Pricing — single source of truth for the /pricing page + offer schema. */
+export const PRICING = {
+  currency: "GBP",
+  freeConsultationMinutes: 60,
+  singleSession: 70,
+  blockOfSixPerSession: 60,
+  blockOfSixTotal: 360,
+} as const;
+
 /** The business's stable @id, so per-page schema can reference the same entity. */
 const BUSINESS_ID = `${SITE_URL}/#business`;
 
@@ -255,6 +264,43 @@ export function serviceSchema(opts: {
     serviceType: opts.serviceType,
     provider: providerRef(),
     areaServed: areaServed(),
+  };
+}
+
+/** Service + priced Offers for the /pricing page. */
+export function pricingPageSchema(description: string): WithContext<Service> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Solution Focused Hypnotherapy sessions",
+    description,
+    url: `${SITE_URL}/pricing/`,
+    serviceType: "Hypnotherapy",
+    provider: providerRef(),
+    areaServed: areaServed(),
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Free initial consultation",
+        price: 0,
+        priceCurrency: PRICING.currency,
+        description: "A free one-hour initial consultation, with no obligation.",
+      },
+      {
+        "@type": "Offer",
+        name: "Single session",
+        price: PRICING.singleSession,
+        priceCurrency: PRICING.currency,
+        description: "Pay-as-you-go, one session at a time.",
+      },
+      {
+        "@type": "Offer",
+        name: "Block of six sessions",
+        price: PRICING.blockOfSixTotal,
+        priceCurrency: PRICING.currency,
+        description: `Six sessions booked together — £${PRICING.blockOfSixPerSession} per session.`,
+      },
+    ],
   };
 }
 

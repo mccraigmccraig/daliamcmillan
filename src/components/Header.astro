@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/about/", label: "About" },
   { href: "/how-it-works/", label: "How it works" },
   { href: "/what-i-can-help-with/", label: "What I help with" },
+  { href: "/pricing/", label: "Pricing" },
   { href: "/children/", label: "Children & teens" },
   { href: "/deep-relaxation/", label: "Free relaxation" },
   { href: "/contact/", label: "Contact" },
@@ -36,12 +37,12 @@ const isChildren = pathname.startsWith("/children/");
       </span>
     </a>
 
-    <nav aria-label="Primary" class="hidden lg:flex items-center gap-8">
+    <nav aria-label="Primary" class="hidden xl:flex items-center gap-6">
       {navLinks.map((link) => (
         <a
           href={link.href}
           class:list={[
-            "text-[15px] transition-colors",
+            "text-[15px] whitespace-nowrap transition-colors",
             link.href === "/children/" ? "flex items-center gap-2" : "",
             isActive(link.href)
               ? "text-primary font-medium"
@@ -55,14 +56,14 @@ const isChildren = pathname.startsWith("/children/");
       ))}
     </nav>
 
-    <div class="hidden lg:block">
+    <div class="hidden xl:block">
       <BookingButton label="Book Now" size="md" />
     </div>
 
     <button
       id="nav-toggle"
       type="button"
-      class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300 text-primary hover:bg-cream-100"
+      class="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300 text-primary hover:bg-cream-100"
       aria-controls="mobile-nav"
       aria-expanded="false"
       aria-label="Open menu"
@@ -82,7 +83,7 @@ const isChildren = pathname.startsWith("/children/");
   <nav
     id="mobile-nav"
     aria-label="Primary mobile"
-    class="hidden lg:hidden border-t border-cream-200/70 bg-background"
+    class="hidden xl:hidden border-t border-cream-200/70 bg-background"
   >
     <ul class="container flex flex-col gap-1 py-4">
       {navLinks.map((link) => (
