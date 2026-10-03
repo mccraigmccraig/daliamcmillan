@@ -1,4 +1,7 @@
 ---
+import { Picture } from "astro:assets";
+import afsfhLogo from "@/assets/afsfh-logo.png";
+
 const year = new Date().getFullYear();
 
 const links = [
@@ -56,6 +59,18 @@ const socials = [
             </li>
           ))}
         </ul>
+
+        <div class="mt-8">
+          <p class="text-xs uppercase tracking-[0.18em] text-muted-foreground">Accredited member</p>
+          <Picture
+            src={afsfhLogo}
+            formats={['webp']}
+            widths={[180, 360]}
+            sizes="176px"
+            alt="Member of the Association for Solution Focused Hypnotherapy (AfSFH)"
+            class="mt-3 h-auto w-[180px]"
+          />
+        </div>
       </div>
 
       <nav aria-label="Footer" class="md:justify-self-center">
