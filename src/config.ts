@@ -124,6 +124,22 @@ export const reviews: Review[] = [
   },
 ];
 
+/** Reviews specific to children & teens work — shown on /children/, not mixed into the main list above. */
+export const childrenReviews: Review[] = [
+  {
+    quote:
+      "Dalia helped me get through my fear of the dentist. I felt calmer, more trusting, and so much less anxious.",
+    name: "GB, age 13",
+    detail: "Overcame a fear of the dentist",
+  },
+  {
+    quote:
+      "Dalia worked with our son on his emetophobia and on some wider anxieties, and we saw a real improvement in how he copes. She was always warm and patient with him, and he was comfortable with her from the start.",
+    name: "A parent",
+    detail: "Supporting a child with emetophobia & anxiety",
+  },
+];
+
 // ---------------------------------------------------------------------------
 // Practitioner (Person) — reused inside the business schema and on /about
 // ---------------------------------------------------------------------------

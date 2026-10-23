@@ -3,7 +3,7 @@ import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import BookingButton from "@/components/BookingButton.astro";
 import boySport from "@/assets/kids-boy-sport.jpg";
-import { serviceSchema, breadcrumbSchema } from "@/config";
+import { serviceSchema, breadcrumbSchema, childrenReviews } from "@/config";
 
 const description =
   "Gentle hypnotherapy for anxious children and teens in Hassocks, Brighton and online — for school refusal, sleep, worries and friendships. Free consultation.";
@@ -83,7 +83,10 @@ const sessionPoints = [
           </a>
         </div>
         <p class="mt-6 text-sm text-muted-foreground">
-          Tell me what's going on, and I'll tell you honestly whether I can help. I work with children, in person in Hassocks, Lewes, Brighton and the surrounding villages, or online.
+          Tell me what's going on, and I'll let you know how I can help. I work with children, in person in Hassocks, Lewes, Brighton and the surrounding villages, or online.
+        </p>
+        <p class="mt-3 text-sm text-muted-foreground">
+          Prefer to talk now? Call or text me on <a href="tel:+447826323155" class="text-lg font-bold text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary">07826&nbsp;323155</a>.
         </p>
       </div>
 
@@ -232,6 +235,44 @@ const sessionPoints = [
     </div>
   </section>
 
+  <!-- Reviews — children & teens -->
+  <section aria-label="Reviews from families" class="py-20 sm:py-24 bg-cream-50 border-y border-cream-200/70">
+    <div class="container">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-xs uppercase tracking-[0.2em] text-terracotta-500">Kind words</p>
+        <h2 class="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-[44px]">
+          From children and parents I've worked with.
+        </h2>
+      </div>
+
+      <ul class="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+        {childrenReviews.map((review) => (
+          <li class="flex h-full flex-col rounded-[1.5rem] border border-cream-200 bg-background p-8 shadow-soft">
+            <div class="flex items-center gap-0.5" role="img" aria-label={`${review.rating ?? 5} out of 5 stars`}>
+              {Array.from({ length: review.rating ?? 5 }).map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f5b301" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.06 6.6.72-4.93 4.44 1.35 6.53L12 17.9l-5.92 2.36 1.35-6.53L2.5 9.28l6.6-.72L12 2.5z"/></svg>
+              ))}
+            </div>
+            <blockquote class="mt-5 flex-1 text-[17px] leading-relaxed text-foreground/85">
+              <p>&ldquo;{review.quote}&rdquo;</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3 border-t border-cream-200 pt-5">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sage-100 font-display text-base text-sage-600" aria-hidden="true">
+                {review.name.trim().charAt(0)}
+              </span>
+              <span class="text-sm">
+                <span class="block font-medium text-foreground">{review.name}</span>
+                {review.detail && (
+                  <span class="block text-muted-foreground">{review.detail}</span>
+                )}
+              </span>
+            </footer>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- For parents too -->
   <section class="py-24 sm:py-28">
     <div class="container">
@@ -262,7 +303,7 @@ const sessionPoints = [
           Start with a free, no-pressure conversation.
         </h2>
         <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          Just you and me — no need to bring your child to the first chat. Tell me what's going on, ask anything you like, and I'll tell you honestly whether I think I can help.
+          Just you and me — no need to bring your child to the first chat. Tell me what's going on, ask anything you like, and I'll let you know how I can help.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <BookingButton size="lg" label="Book a free consultation" />
@@ -276,6 +317,7 @@ const sessionPoints = [
         <p class="mt-6 text-sm text-muted-foreground">
           Or email
           <a href="mailto:daliamcmillantherapy@gmail.com" class="text-primary underline underline-offset-4 hover:text-terracotta-500">daliamcmillantherapy@gmail.com</a>
+          — or call or text me on <a href="tel:+447826323155" class="text-lg font-bold text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary">07826&nbsp;323155</a>.
         </p>
       </div>
     </div>
